@@ -1073,6 +1073,36 @@ namespace TJAPlayer3
                             #endregion
 
                             #region 新・SkinConfig
+                            #region UserConfig
+                            else if (strCommand == nameof(UserConfig_TitleDon_Show))
+                            {
+                                UserConfig_TitleDon_Show = bool.Parse(strParam);
+                            }
+                            else if (strCommand == nameof(UserConfig_NamePlateNameOffset_X))
+                            {
+                                UserConfig_NamePlateNameOffset_X = int.Parse(strParam);
+                            }
+                            else if (strCommand == nameof(UserConfig_NamePlateNameOffset_Y))
+                            {
+                                UserConfig_NamePlateNameOffset_Y = int.Parse(strParam);
+                            }
+                            else if (strCommand == nameof(UserConfig_NamePlateTitleOffset_X))
+                            {
+                                UserConfig_NamePlateTitleOffset_X = int.Parse(strParam);
+                            }
+                            else if (strCommand == nameof(UserConfig_NamePlateTitleOffset_Y))
+                            {
+                                UserConfig_NamePlateTitleOffset_Y = int.Parse(strParam);
+                            }
+                            else if (strCommand == nameof(UserConfig_NamePlateDanOffset_X))
+                            {
+                                UserConfig_NamePlateDanOffset_X = int.Parse(strParam);
+                            }
+                            else if (strCommand == nameof(UserConfig_NamePlateDanOffset_Y))
+                            {
+                                UserConfig_NamePlateDanOffset_Y = int.Parse(strParam);
+                            }
+                            #endregion
                             #region Config
                             else if (strCommand == nameof(Config_ItemText_Correction_X))
                             {
@@ -2569,6 +2599,15 @@ namespace TJAPlayer3
         public string Skin_Name = "Unknown";
         public string Skin_Version = "Unknown";
         public string Skin_Creator = "Unknown";
+        #endregion
+        #region UserConfig
+        public bool UserConfig_TitleDon_Show = true;
+        public int UserConfig_NamePlateNameOffset_X = 0;
+        public int UserConfig_NamePlateNameOffset_Y = 0;
+        public int UserConfig_NamePlateTitleOffset_X = 0;
+        public int UserConfig_NamePlateTitleOffset_Y = 0;
+        public int UserConfig_NamePlateDanOffset_X = 0;
+        public int UserConfig_NamePlateDanOffset_Y = 0;
         #endregion
         #region Config
         public int Config_ItemText_Correction_X = 0;
