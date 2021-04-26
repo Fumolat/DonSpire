@@ -720,8 +720,12 @@ namespace TJAPlayer3
 							{
 								actEnumSongs.On活性化();
 								TJAPlayer3.stage選曲.bIsEnumeratingSongs = true;
-								EnumSongs.Init();	// 取得した曲数を、新インスタンスにも与える
+								EnumSongs.Init( TJAPlayer3.Songs管理.listSongsDB, TJAPlayer3.Songs管理.nSongsDBから取得できたスコア数 );	// songs.db情報と、取得した曲数を、新インスタンスにも与える
 								EnumSongs.StartEnumFromDisk();		// 曲検索スレッドの起動_開始
+								if ( TJAPlayer3.Songs管理.nSongsDBから取得できたスコア数 == 0 )	// もし初回起動なら、検索スレッドのプライオリティをLowestでなくNormalにする
+								{
+									EnumSongs.ChangeEnumeratePriority( ThreadPriority.Normal );
+								}
 							}
 							#endregion
 							
@@ -805,6 +809,7 @@ namespace TJAPlayer3
 								stage曲読み込み.On活性化();
 								r直前のステージ = r現在のステージ;
 								r現在のステージ = stage曲読み込み;
+
 							}
 							foreach( STPlugin pg in this.listプラグイン )
 							{

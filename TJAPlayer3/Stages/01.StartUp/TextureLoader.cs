@@ -80,7 +80,6 @@ namespace TJAPlayer3
             Scanning_Loudness = TxC(@"Scanning_Loudness.png");
             Overlay = TxC(@"Overlay.png");
             Network_Connection = TxC(@"Network_Connection.png");
-            Readme = TxC(@"Readme.png");
             NamePlate = new CTexture[2];
             NamePlateBase = TxC(@"NamePlate.png");
             NamePlate[0] = TxC(@"1P_NamePlate.png");
@@ -734,7 +733,6 @@ namespace TJAPlayer3
             Scanning_Loudness,
             NamePlateBase,
             Overlay,
-            Readme,
             Network_Connection;
         public CTexture[] NamePlate;
 
