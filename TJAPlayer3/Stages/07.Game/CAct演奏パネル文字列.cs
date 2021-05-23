@@ -92,7 +92,7 @@ namespace TJAPlayer3
 				}
                 if( !string.IsNullOrEmpty(genreName) )
                 {
-                    if (genreName.Equals("J-POP"))
+                    if (genreName.Equals("ポップス"))
                     {
                         this.txGENRE = TJAPlayer3.Tx.TxCGen("Pops");
                     }
@@ -100,7 +100,7 @@ namespace TJAPlayer3
                     {
                         this.txGENRE = TJAPlayer3.Tx.TxCGen("Anime");
                     }
-                    else if(genreName.Equals( "ゲームミュージック" ) )
+                    else if(genreName.Equals( "ゲームバラエティ" ) )
                     {
                         this.txGENRE = TJAPlayer3.Tx.TxCGen("Game");
                     }
