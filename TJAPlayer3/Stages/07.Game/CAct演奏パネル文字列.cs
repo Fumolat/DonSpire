@@ -100,7 +100,7 @@ namespace TJAPlayer3
                     {
                         this.txGENRE = TJAPlayer3.Tx.TxCGen("Anime");
                     }
-                    else if(genreName.Equals( "ゲームバラエティ" ) )
+                    else if(genreName.Equals( "ゲームミュージック" ) )
                     {
                         this.txGENRE = TJAPlayer3.Tx.TxCGen("Game");
                     }
@@ -116,7 +116,7 @@ namespace TJAPlayer3
                     {
                         this.txGENRE = TJAPlayer3.Tx.TxCGen("Variety");
                     }
-                    else if(genreName.Equals( "どうよう" ) )
+                    else if(genreName.Equals( "キッズ" ) )
                     {
                         this.txGENRE = TJAPlayer3.Tx.TxCGen("Child");
                     }
