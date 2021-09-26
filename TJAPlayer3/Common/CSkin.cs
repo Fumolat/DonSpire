@@ -2656,9 +2656,9 @@ namespace TJAPlayer3
         public int SongLoading_Plate_X = 640;
         public int SongLoading_Plate_Y = 360;
         public int SongLoading_Title_X = 640;
-        public int SongLoading_Title_Y = 280;
+        public int SongLoading_Title_Y = 256;
         public int SongLoading_SubTitle_X = 640;
-        public int SongLoading_SubTitle_Y = 325;
+        public int SongLoading_SubTitle_Y = 311;
         public int SongLoading_Title_FontSize = 31;
         public int SongLoading_SubTitle_FontSize = 20;
         public ReferencePoint SongLoading_Plate_ReferencePoint = ReferencePoint.Center;
@@ -2721,12 +2721,12 @@ namespace TJAPlayer3
         public int[] Game_CourseSymbol_Y = new int[] { 233, 426 };
         #endregion
         #region PanelFont
-        public int Game_MusicName_X = 1160;
-        public int Game_MusicName_Y = 24;
+        public int Game_MusicName_X = 1158;
+        public int Game_MusicName_Y = 6;
         public int Game_MusicName_FontSize = 27;
         public ReferencePoint Game_MusicName_ReferencePoint = ReferencePoint.Center;
-        public int Game_Genre_X = 1015;
-        public int Game_Genre_Y = 70;
+        public int Game_Genre_X = 1011;
+        public int Game_Genre_Y = 64;
         public int Game_Lyric_X = 640;
         public int Game_Lyric_Y = 630;
         public string Game_Lyric_FontName = "MS UI Gothic";
@@ -2856,7 +2856,7 @@ namespace TJAPlayer3
         #endregion
         #region PuchiChara
         public int[] Game_PuchiChara_X = new int[] { 100, 100 };
-        public int[] Game_PuchiChara_Y = new int[] { 140, 675 };
+        public int[] Game_PuchiChara_Y = new int[] { 140, 670 };
         public int[] Game_PuchiChara_BalloonX = new int[] { 300, 300 };
         public int[] Game_PuchiChara_BalloonY = new int[] { 240, 500 };
         public float[] Game_PuchiChara_Scale = new float[] { 0.7f, 1.0f }; // 通常時、 ふうせん連打時
