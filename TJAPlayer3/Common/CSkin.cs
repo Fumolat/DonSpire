@@ -23,7 +23,10 @@ namespace TJAPlayer3
         SOUNDゲーム終了音,
         SOUNDステージクリア音,
         SOUNDタイトル音,
+        SOUNDクリア失敗音,
+        SOUNDクリア成功音,
         SOUNDフルコンボ音,
+        SOUNDドンダフルコンボ音,
         SOUND歓声音,
         SOUND曲読込開始音,
         SOUND決定音,
@@ -319,7 +322,10 @@ namespace TJAPlayer3
         public Cシステムサウンド soundゲーム開始音 = null;
         public Cシステムサウンド soundゲーム終了音 = null;
         public Cシステムサウンド soundステージクリア音 = null;
+        public Cシステムサウンド soundクリア失敗音 = null;
+        public Cシステムサウンド soundクリア成功 = null;
         public Cシステムサウンド soundフルコンボ音 = null;
+        public Cシステムサウンド soundドンダフルコンボ音 = null;
         public Cシステムサウンド sound歓声音 = null;
         public Cシステムサウンド sound曲読込開始音 = null;
         public Cシステムサウンド sound決定音 = null;
@@ -352,6 +358,8 @@ namespace TJAPlayer3
         public Cシステムサウンド soundPon = null;
         public Cシステムサウンド soundGauge = null;
         public Cシステムサウンド soundScoreDon = null;
+
+        
         public Cシステムサウンド soundChallengeVoice = null;
         public Cシステムサウンド soundDanSelectStart = null;
         public Cシステムサウンド soundDanSongSelectCheck = null;
