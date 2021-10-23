@@ -2922,7 +2922,7 @@ namespace TJAPlayer3
         #region Result
         public int Result_MusicName_X = 640;
         public int Result_MusicName_Y = 30;
-        public int Result_MusicName_FontSize = 25;
+        public int Result_MusicName_FontSize = 26;
         public ReferencePoint Result_MusicName_ReferencePoint = ReferencePoint.Center;
         public int Result_StageText_X = 230;
         public int Result_StageText_Y = 6;
