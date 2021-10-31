@@ -468,6 +468,7 @@ namespace TJAPlayer3
             Background_Down = TxC(GAME + BACKGROUND + @"0\" + @"Down.png");
             Background_Down_Clear = TxC(GAME + BACKGROUND + @"0\" + @"Down_Clear.png");
             Background_Down_Scroll = TxC(GAME + BACKGROUND + @"0\" + @"Down_Scroll.png");
+            Background_Down_Sakura = TxC(GAME + BACKGROUND + @"0\" + @"Sakura.png");
 
             #endregion
             #region 太鼓
@@ -876,7 +877,8 @@ namespace TJAPlayer3
         public CTexture Background,
             Background_Down,
             Background_Down_Clear,
-            Background_Down_Scroll;
+            Background_Down_Scroll,
+            Background_Down_Sakura;
         public CTexture[] Background_Up_1st,
                           Background_Up_2nd,
                           Background_Up_3rd,
