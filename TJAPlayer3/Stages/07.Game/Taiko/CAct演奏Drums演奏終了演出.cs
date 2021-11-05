@@ -46,21 +46,15 @@ namespace TJAPlayer3
                 {
                     if (TJAPlayer3.stage演奏ドラム画面.actGauge.db現在のゲージ値[i] >= 80)
                     {
-                        if(TJAPlayer3.stage演奏ドラム画面.nヒット数_Auto含む.Drums.Miss == 0)
+                        if (TJAPlayer3.stage演奏ドラム画面.nヒット数_Auto含まない.Drums.Miss == 0)
                         {
-                            if(TJAPlayer3.stage演奏ドラム画面.nヒット数_Auto含む.Drums.Great == 0)
-                            {
+                            if (TJAPlayer3.stage演奏ドラム画面.nヒット数_Auto含まない.Drums.Great == 0)
                                 this.Mode[i] = EndMode.StageDonderFullCombo;
-                            }
                             else
-                            {
                                 this.Mode[i] = EndMode.StageFullCombo;
-                            }
                         }
                         else
-                        {
                             this.Mode[i] = EndMode.StageCleared;
-                        }
                     }
                     else
                     {
