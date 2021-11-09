@@ -83,7 +83,7 @@ namespace TJAPlayer3
             this.soundClear = TJAPlayer3.Sound管理.tサウンドを生成する(CSkin.Path(@"Sounds\Clear.ogg"), ESoundGroup.SoundEffect);
             this.soundFailed = TJAPlayer3.Sound管理.tサウンドを生成する(CSkin.Path(@"Sounds\Failed.ogg"), ESoundGroup.SoundEffect);
             this.soundFullCombo = TJAPlayer3.Sound管理.tサウンドを生成する(CSkin.Path(@"Sounds\Full combo.ogg"), ESoundGroup.SoundEffect);
-                        this.soundDonderFullCombo = TJAPlayer3.Sound管理.tサウンドを生成する(CSkin.Path(@"Sounds\Donder Full Combo.ogg"), ESoundGroup.SoundEffect);
+            this.soundDonderFullCombo = TJAPlayer3.Sound管理.tサウンドを生成する(CSkin.Path(@"Sounds\Donder Full Combo.ogg"), ESoundGroup.SoundEffect);
             base.OnManagedリソースの作成();
         }
 
@@ -115,13 +115,114 @@ namespace TJAPlayer3
                     switch (this.Mode[i])
                     {
                         case EndMode.StageFailed:
-                                                    //this.ct進行メイン.n現在の値 = 18;
+                        	if (TJAPlayer3.Tx.End_Failed_Text != null) 
+							{
+                                #region[ 文字 ]
+                                #region[ Opacity ]
+                                if (this.ct進行メイン.n現在の値 < 26) 
+								{
+									TJAPlayer3.Tx.End_Failed_Text.Opacity = 0;
+								}
+								if (this.ct進行メイン.n現在の値 <= 36)
+								{
+									TJAPlayer3.Tx.End_Failed_Text.Opacity = (int)(((this.ct進行メイン.n現在の値 - 26) / 10.0) * 255.0);
+								}
+								else 
+								{
+									TJAPlayer3.Tx.End_Failed_Text.Opacity = 255;
+								}
+								#endregion
+								#region[ Rotate ]
+								int ytxtdiff = 0;
+                                if (this.ct進行メイン.n現在の値 < 116) 
+								{
+									TJAPlayer3.Tx.End_Failed_Text.fZ軸中心回転 = 0f;
+								}
+								else if (this.ct進行メイン.n現在の値 <= 118)
+								{
+									TJAPlayer3.Tx.End_Failed_Text.fZ軸中心回転 = (float)-(((this.ct進行メイン.n現在の値 - 116) / 3.0 * 5.0 / 180.0) * Math.PI);
+									ytxtdiff = (this.ct進行メイン.n現在の値 - 116) * 2;
+								}
+								else
+								{
+									TJAPlayer3.Tx.End_Failed_Text.fZ軸中心回転 = (float)-(5.0 / 180.0 * Math.PI);
+									ytxtdiff = 10;
+								}
+
+								#endregion
+								TJAPlayer3.Tx.End_Failed_Text.t2D拡大率考慮描画(TJAPlayer3.app.Device, CTexture.RefPnt.Down, 810, y[i] + TJAPlayer3.Tx.End_FullCombo_Text.szTextureSize.Height + ytxtdiff);
+								#endregion
+                                #region[ バチお ]
+                                if (this.ct進行メイン.n現在の値 <= 11)
+								{
+									if (TJAPlayer3.Tx.End_Failed_L[1] != null)
+									{
+										TJAPlayer3.Tx.End_Failed_L[1].t2D描画(TJAPlayer3.app.Device, 697, y[i] - 30);
+										TJAPlayer3.Tx.End_Failed_L[1].Opacity = (int)(11.0 / this.ct進行メイン.n現在の値) * 255;
+									}
+									if (TJAPlayer3.Tx.End_Failed_R[1] != null)
+									{
+										TJAPlayer3.Tx.End_Failed_R[1].t2D描画(TJAPlayer3.app.Device, 738, y[i] - 30);
+										TJAPlayer3.Tx.End_Failed_R[1].Opacity = (int)(11.0 / this.ct進行メイン.n現在の値) * 255;
+									}
+								}
+								else if (this.ct進行メイン.n現在の値 <= 25)
+								{
+									if (TJAPlayer3.Tx.End_Failed_L[0] != null)
+										TJAPlayer3.Tx.End_Failed_L[0].t2D描画(TJAPlayer3.app.Device, 697 - (int)((this.ct進行メイン.n現在の値 - 12) * 10), y[i] - 30);
+									if (TJAPlayer3.Tx.End_Failed_R[0] != null)
+										TJAPlayer3.Tx.End_Failed_R[0].t2D描画(TJAPlayer3.app.Device, 738 + (int)((this.ct進行メイン.n現在の値 - 12) * 10), y[i] - 30);
+								}
+								else if (this.ct進行メイン.n現在の値 <= 35)
+								{
+									int ydiff = (int)(Math.Sin((this.ct進行メイン.n現在の値 - 25) / 20.0 * Math.PI) * 100.0);
+									if (TJAPlayer3.Tx.End_Failed_L[2] != null)
+									{
+										TJAPlayer3.Tx.End_Failed_L[2].fRotation = (float)(((this.ct進行メイン.n現在の値 - 25) / 20.0 * Math.PI / 2.0));
+										TJAPlayer3.Tx.End_Failed_L[2].t2D描画(TJAPlayer3.app.Device, 697 - (int)((this.ct進行メイン.n現在の値 - 12) * 10), y[i] - ydiff - 30);
+									}
+									if (TJAPlayer3.Tx.End_Failed_R[0] != null)
+									{
+										TJAPlayer3.Tx.End_Failed_R[2].fRotation = (float)-(((this.ct進行メイン.n現在の値 - 25) / 20.0 * Math.PI / 2.0));
+										TJAPlayer3.Tx.End_Failed_R[2].t2D描画(TJAPlayer3.app.Device, 738 + (int)((this.ct進行メイン.n現在の値 - 12) * 10), y[i] - ydiff - 30);
+									}
+								}
+								else if (this.ct進行メイン.n現在の値 <= 43)
+								{
+									int ydiff = (int)(Math.Sin((this.ct進行メイン.n現在の値 - 25) / 20.0 * Math.PI) * 100.0);
+									if (TJAPlayer3.Tx.End_Failed_L[2] != null)
+									{
+										TJAPlayer3.Tx.End_Failed_L[2].fRotation = (float)(Math.PI / 2.0);
+										TJAPlayer3.Tx.End_Failed_L[2].t2D描画(TJAPlayer3.app.Device, 467, y[i] - ydiff - 30);
+									}
+									if (TJAPlayer3.Tx.End_Failed_R[2] != null)
+									{
+										TJAPlayer3.Tx.End_Failed_R[2].fRotation = (float)-(Math.PI / 2.0);
+										TJAPlayer3.Tx.End_Failed_R[2].t2D描画(TJAPlayer3.app.Device, 968, y[i] - ydiff - 30);
+									}
+								}
+								else 
+								{
+									TJAPlayer3.Tx.End_Failed_L[3].t2D描画(TJAPlayer3.app.Device, 467, y[i] - 30);
+									TJAPlayer3.Tx.End_Failed_R[3].t2D描画(TJAPlayer3.app.Device, 968, y[i] - 30);
+								}
+								#endregion
+								#region[ Impact ]
+								if (this.ct進行メイン.n現在の値 >= 25 && this.ct進行メイン.n現在の値 < 30)
+								{
+									TJAPlayer3.Tx.End_Failed_Impact.Opacity = (int)(Math.Sin((this.ct進行メイン.n現在の値 - 25) / 5.0 * Math.PI) * 255);
+									TJAPlayer3.Tx.End_Failed_Impact.t2D描画(TJAPlayer3.app.Device, 597, y[i] + 80);
+									TJAPlayer3.Tx.End_Failed_Impact.t2D描画(TJAPlayer3.app.Device, 958, y[i] + 80);
+								}
+								#endregion
                             if (this.soundFailed != null && !this.b再生済み)
-                            {
+                             {
                                 this.soundFailed.t再生を開始する();
                                 this.b再生済み = true;
-                            }
-                            break;
+                             }
+							}
+							break;
+                                                    //this.ct進行メイン.n現在の値 = 18;
                         case EndMode.StageCleared:
                             int[] y = new int[] { 300, 386 };
                             for (int j = 0; j < TJAPlayer3.ConfigIni.nPlayerCount; j++)
