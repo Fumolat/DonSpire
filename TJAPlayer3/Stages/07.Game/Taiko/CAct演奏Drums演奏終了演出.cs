@@ -115,13 +115,51 @@ namespace TJAPlayer3
                     switch (this.Mode[i])
                     {
                         case EndMode.StageFailed:
-                                                    //this.ct進行メイン.n現在の値 = 18;
+                        	if (TJAPlayer3.Tx.End_Failed_Text != null) 
+							{
+                                #region[ 文字 ]
+                                #region[ Opacity ]
+                                if (this.ct進行メイン.n現在の値 < 26) 
+								{
+									TJAPlayer3.Tx.End_Failed_Text.Opacity = 0;
+								}
+								if (this.ct進行メイン.n現在の値 <= 36)
+								{
+									TJAPlayer3.Tx.End_Failed_Text.Opacity = (int)(((this.ct進行メイン.n現在の値 - 26) / 10.0) * 255.0);
+								}
+								else 
+								{
+									TJAPlayer3.Tx.End_Failed_Text.Opacity = 255;
+								}
+                                #endregion
+                                #endregion
+                                #region[ Rotate ]
+                                int ytxtdiff = 0;
+                                if (this.ct進行メイン.n現在の値 < 116) 
+								{
+									TJAPlayer3.Tx.End_Failed_Text.fZ軸中心回転 = 0f;
+								}
+								else if (this.ct進行メイン.n現在の値 <= 118)
+								{
+									TJAPlayer3.Tx.End_Failed_Text.fZ軸中心回転 = (float)-(((this.ct進行メイン.n現在の値 - 116) / 3.0 * 5.0 / 180.0) * Math.PI);
+									ytxtdiff = (this.ct進行メイン.n現在の値 - 116) * 2;
+								}
+								else
+								{
+									TJAPlayer3.Tx.End_Failed_Text.fZ軸中心回転 = (float)-(5.0 / 180.0 * Math.PI);
+									ytxtdiff = 10;
+								}
+
+								#endregion
+
                             if (this.soundFailed != null && !this.b再生済み)
-                            {
+                             {
                                 this.soundFailed.t再生を開始する();
                                 this.b再生済み = true;
-                            }
-                            break;
+                             }
+							}
+							break;
+
                         case EndMode.StageCleared:
                             int[] y = new int[] { 300, 386 };
                             for (int j = 0; j < TJAPlayer3.ConfigIni.nPlayerCount; j++)
