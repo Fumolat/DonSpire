@@ -622,6 +622,15 @@ namespace TJAPlayer3
             End_Clear_Chara = TxC(GAME + END + @"Clear_Chara.png");
             End_Star = TxC(GAME + END + @"Star.png");
 
+			End_Failed_L = new CTexture[4];
+			End_Failed_R = new CTexture[4];
+			for (int i = 0; i < 4; i++)
+			{
+			    End_Failed_L[i] = TxC(GAME + END + @"Failed_L_" + i.ToString() + ".png");
+				End_Failed_R[i] = TxC(GAME + END + @"Failed_R_" + i.ToString() + ".png");
+			}
+            End_Failed_Impact = TxC(GAME + END + @"Failed_Impact.png");
+            End_Failed_Text = TxC(GAME + END + @"Failed_Text.png");
             End_Clear_Text = new CTexture[2];
             End_Clear_Text[0] = TxC(GAME + END + @"Clear_Text.png");
             End_Clear_Text[1] = TxC(GAME + END + @"Clear_Text_End.png");
@@ -948,6 +957,11 @@ namespace TJAPlayer3
         #endregion
         #region 終了演出
         public CTexture End_Clear_Chara;
+        public CTexture[] End_Failed_L;
+        public CTexture[] End_Failed_R;
+        public CTexture[] End_Fan;
+        public CTexture End_Failed_Text;
+        public CTexture End_Failed_Impact;
         public CTexture[] End_Clear_Text;
         public CTexture End_Star;
         #endregion
