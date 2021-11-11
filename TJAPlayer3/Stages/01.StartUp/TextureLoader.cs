@@ -629,11 +629,21 @@ namespace TJAPlayer3
 			    End_Failed_L[i] = TxC(GAME + END + @"Failed_L_" + i.ToString() + ".png");
 				End_Failed_R[i] = TxC(GAME + END + @"Failed_R_" + i.ToString() + ".png");
 			}
+           	End_Fan = new CTexture[4];
+			for (int i = 0; i < 4; i++)
+			{
+				End_Fan[i] = TxC(GAME + END + @"Fan_" + i.ToString() + ".png");
+			} 
             End_Failed_Impact = TxC(GAME + END + @"Failed_Impact.png");
             End_Failed_Text = TxC(GAME + END + @"Failed_Text.png");
             End_Clear_Text = new CTexture[2];
             End_Clear_Text[0] = TxC(GAME + END + @"Clear_Text.png");
             End_Clear_Text[1] = TxC(GAME + END + @"Clear_Text_End.png");
+            End_FullCombo_Text = TxC(GAME + END + @"FullCombo_Text.png");
+			End_FullCombo_Text_Effect = TxC(GAME + END + @"FullCombo_Text_Effect.png");
+            End_DonderFullCombo_Lane = TxC(GAME + END + @"DonderFullCombo_Lane.png");
+			End_DonderFullCombo_Text = TxC(GAME + END + @"DonderFullCombo_Text.png");
+			End_DonderFullCombo_Text_Effect = TxC(GAME + END + @"DonderFullCombo_Text_Effect.png");
             #endregion
             #region ゲームモード
             GameMode_Timer_Tick = TxC(GAME + GAMEMODE + @"Timer_Tick.png");
@@ -963,6 +973,11 @@ namespace TJAPlayer3
         public CTexture End_Failed_Text;
         public CTexture End_Failed_Impact;
         public CTexture[] End_Clear_Text;
+        public CTexture End_FullCombo_Text;
+        public CTexture End_FullCombo_Text_Effect;
+        public CTexture End_DonderFullCombo_Lane;
+        public CTexture End_DonderFullCombo_Text;
+        public CTexture  End_DonderFullCombo_Text_Effect;      
         public CTexture End_Star;
         #endregion
         #region ゲームモード
