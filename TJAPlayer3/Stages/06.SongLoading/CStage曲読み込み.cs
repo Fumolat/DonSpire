@@ -19,8 +19,6 @@ namespace TJAPlayer3
 			base.eステージID = CStage.Eステージ.曲読み込み;
 			base.eフェーズID = CStage.Eフェーズ.共通_通常状態;
 			base.b活性化してない = true;
-			//base.list子Activities.Add( this.actFI = new CActFIFOBlack() );	// #27787 2012.3.10 yyagi 曲読み込み画面のフェードインの省略
-			//base.list子Activities.Add( this.actFO = new CActFIFOBlack() );
 		}
 
 
