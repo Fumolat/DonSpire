@@ -29,4 +29,5 @@ Fork元より引用。
 > * [Mr-Ojii/TJAPlayer3-f](https://github.com/Mr-Ojii/TJAPlayer3-f)(@Mr-Ojii)
 > * [Akasoko/TJAPlayer3](https://github.com/Akasoko-Master/TJAPlayer3)(@AkasokoR)
 > * [touhourenren/TJAPlayer3-Develop-ReWrite](https://github.com/touhourenren/TJAPlayer3-Develop-ReWrite)(@touhourenren)
-> * [CYakigasi/DonSpire](https://github.com/castella-cake/DonSpire)(@castella-cake)
+> * [CYakigasi/DonSpire](https://github.com/castella-cake/DonSpire)(@CYakigasi)
+> * [0auBSQ/OpenTaiko](https://github.com/0auBSQ/OpenTaiko)(@0auBSQ)
