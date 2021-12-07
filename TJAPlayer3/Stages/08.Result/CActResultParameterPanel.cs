@@ -438,8 +438,42 @@ namespace TJAPlayer3
 		private CCounter ct虹ゲージアニメ;
 		private CCounter ctSoul;
 
+		public CCounter ctEndAnime;
+		public CCounter ctMountain_ClearIn;
+		public CCounter ctBackgroundAnime;
+		public CCounter ctBackgroundAnime_Clear;
+		private CCounter ctDonchan_Normal;
+		private CCounter ctDonchan_Clear;
+		private CCounter ctDonchan_Failed;
+		private CCounter ctDonchan_Failed_In;
+
+		private int RandomText;
+
+		private CCounter ctFlash_Icon;
+		private CCounter ctRotate_Flowers;
+		private CCounter ctShine_Plate;
+
+		public PuchiChara PuchiChara;
+
+		public float MountainAppearValue;
+		private int GaugeFactor;
+
 		public bool[] b音声再生 = { false, false, false, false, false, false, false, false, false };
 		
+		// Cherry blossom flowers variables
+		public int[] FlowerXPos = { -114, -37, 114, 78, -75 };
+		public int[] FlowerYPos = { -33, 3, -36, -81, -73 };
+		public float[] FlowerRotationSpeeds = { 5f, 3f, -6f, 4f, -2f };
+		public int[] ApparitionTimeStamps = { 10, 30, 50, 100, 190 };
+		public int ApparitionFade = 100;
+		public int ApparitionDuration = 300;
+
+		// Plate shine variables 
+		public int[] ShinePXPos = { 114 - 25, 114 - 16, -37 - 23, -37 - 9, -75 + 20, 78 - 13};
+		public int[] ShinePYPos = { -36 + 52, -36 + 2, 3 - 7, 3 + 30, -73 - 23, -81 - 31};
+		public int ShinePFade = 100;
+
+
 		private CCounter ct表示用;
 		private readonly Point[] ptFullCombo位置;
 		private CSound sdDTXで指定されたフルコンボ音;
