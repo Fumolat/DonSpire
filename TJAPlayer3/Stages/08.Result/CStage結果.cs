@@ -555,28 +555,6 @@ namespace TJAPlayer3
 					}
 				}
 			}
-			#region [ #24609 2011.4.11 yyagi; リザルトの手動保存ロジックは、CDTXManiaに移管した。]
-			//			else
-			//			{
-			//				// リザルト画像を手動保存するときは、dtxファイル名.yyMMddHHmmss_SS.png という形式で保存。(楽器名無し)
-			//				string strRank = ( (CScoreIni.ERANK) ( CDTXMania.stage結果.n総合ランク値 ) ).ToString();
-			//				string strSavePath = CDTXMania.strEXEのあるフォルダ + "\\" + "Capture_img";
-			//				if ( !Directory.Exists( strSavePath ) )
-			//				{
-			//					try
-			//					{
-			//						Directory.CreateDirectory( strSavePath );
-			//					}
-			//					catch
-			//					{
-			//					}
-			//				}
-			//				string strFullPath = strSavePath + "\\" + CDTXMania.DTX.TITLE +
-			//					"." + datetime + "_" + strRank + ".png";
-			//				// Surface.ToFile( pSurface, strFullPath, ImageFileFormat.Png );
-			//				CDTXMania.app.SaveResultScreen( strFullPath );
-			//			}
-			#endregion
 		}
 		#endregion
 		//-----------------
