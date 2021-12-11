@@ -938,6 +938,7 @@ namespace TJAPlayer3
 								this.stバー情報[index].nスコアランク = song.arスコア[i].譜面情報.nスコアランク;
 							}
 						}
+						
 						// stバー情報[] の内容を1行ずつずらす。
 
 						C曲リストノード song2 = this.r現在選択中の曲;
