@@ -33,7 +33,7 @@ namespace TJAPlayer3
                     if (!this.Rainbow2P[i].IsUsing && player == 1)
                     {
                         this.Rainbow2P[i].IsUsing = true;
-                        this.Rainbow2P[i].Counter = new CCounter(0, 164, 5, TJAPlayer3.Timer); // カウンタ
+                        this.Rainbow2P[i].Counter = new CCounter(0, 54, 5, TJAPlayer3.Timer); // カウンタ
                         this.Rainbow2P[i].Player = player;
                         break;
                     }
