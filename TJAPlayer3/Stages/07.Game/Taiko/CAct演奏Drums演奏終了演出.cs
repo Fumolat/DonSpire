@@ -151,14 +151,13 @@ namespace TJAPlayer3
 								}
 
 								#endregion
-
                             if (this.soundFailed != null && !this.b再生済み)
-                             {
-                                this.soundFailed.t再生を開始する();
+                              {
+                                 this.soundFailed.t再生を開始する();
                                 this.b再生済み = true;
-                             }
+                              }
 							}
-							break;
+						break;
 
                         case EndMode.StageCleared:
                             int[] y = new int[] { 300, 386 };
@@ -310,18 +309,51 @@ namespace TJAPlayer3
                                     StarDraw(962, 291, ct進行Loop.n現在の値 - 21, 13);
                                     StarDraw(962, 291, ct進行Loop.n現在の値 - 30, 0, 9);
                                 }
-
                                 #endregion
                             }
-                            break;
-                        case EndMode.StageFullCombo:
-                                                    //this.ct進行メイン.n現在の値 = 18;
-                            if (this.soundFullCombo != null && !this.b再生済み)
-                            {
-                                this.soundFullCombo.t再生を開始する();
-                                this.b再生済み = true;
-                            }
-                            break;
+                        break;
+
+					    case EndMode.StageFullCombo:
+							if (this.soundFullCombo != null && !this.b再生済み)
+							{
+								this.soundFullCombo.t再生を開始する();
+								this.b再生済み = true;
+							}
+						    if (TJAPlayer3.Tx.End_Clear_Text != null)
+							{
+								#region[ 文字 ]
+
+                                float[] f文字拡大率 = new float[] { 1.04f, 1.11f, 1.15f, 1.19f, 1.23f, 1.26f, 1.30f, 1.31f, 1.32f, 1.32f, 1.32f, 1.30f, 1.30f, 1.26f, 1.25f, 1.19f, 1.15f, 1.11f, 1.05f, 1.0f };
+                                int[] n透明度 = new int[] { 43, 85, 128, 170, 213, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 };
+
+                                for(int j = 0; j < 5; j++)
+                                {
+                                    if (this.ct進行メイン.n現在の値 >= 25 + j * 3)
+                                    {
+                                        if (this.ct進行メイン.n現在の値 <= 44 + j * 3)
+                                        {
+                                            TJAPlayer3.Tx.End_Clear_Text[0].vc拡大縮小倍率.Y = f文字拡大率[this.ct進行メイン.n現在の値 - (25 + j * 3)];
+                                            TJAPlayer3.Tx.End_Clear_Text[0].Opacity = n透明度[this.ct進行メイン.n現在の値 - (25 + j * 3)];
+                                            //TJAPlayer3.Tx.End_Clear_Text[0].t2D拡大率考慮下基準描画(TJAPlayer3.app.Device, 634 + (j < 3 ? j * 58 : 2 * 58 + (j - 2) * 65), y[i], new Rectangle(90 * j, 0, 90, 90));
+                                        }
+                                        else
+                                        {
+                                            if (this.ct進行メイン.n現在の値 <= 78)
+                                            {
+                                                TJAPlayer3.Tx.End_Clear_Text[0].vc拡大縮小倍率.Y = 1.0f;
+                                                TJAPlayer3.Tx.End_Clear_Text[0].Opacity = 255;
+                                                //TJAPlayer3.Tx.End_Clear_Text[0].t2D拡大率考慮下基準描画(TJAPlayer3.app.Device, 634 + (j < 3 ? j * 58 : 2 * 58 + (j - 2) * 65), y[i], new Rectangle(90 * j, 0, 90, 90));
+                                            }
+                                            else
+                                            {
+                                                TJAPlayer3.Tx.End_Clear_Text[1].Opacity = 255;
+                                                //TJAPlayer3.Tx.End_Clear_Text[1].t2D描画(TJAPlayer3.app.Device, 641, y[i] - 85, new Rectangle(0, 0, 334, 84));
+                                            }
+                                        }
+                                    }
+                                }
+                            }       
+                        break;
                         case EndMode.StageDonderFullCombo:
                             //this.ct進行メイン.n現在の値 = 18;
                             if (this.soundDonderFullCombo != null && !this.b再生済み)
@@ -329,14 +361,12 @@ namespace TJAPlayer3
                                 this.soundDonderFullCombo.t再生を開始する();
                                 this.b再生済み = true;
                             }
-                            break;
-                        default:
-                            break;
+                        break;
+                          default:
+                        break;  
                     }
 
                 }
-
-
 
                 if (this.ct進行メイン.b終了値に達した)
                 {
@@ -350,7 +380,6 @@ namespace TJAPlayer3
 
             return 0;
         }
-
         #region[ private ]
         //-----------------
         bool b再生済み;
@@ -392,8 +421,7 @@ namespace TJAPlayer3
                 }
             }
         }
-
-        //-----------------
         #endregion
     }
 }
+#endregion
