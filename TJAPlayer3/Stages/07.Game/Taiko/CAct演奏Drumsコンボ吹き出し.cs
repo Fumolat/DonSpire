@@ -31,7 +31,7 @@ namespace TJAPlayer3
         public virtual void Start( int nCombo, int player )
 		{
             this.NowDrawBalloon = 0;
-            this.ct進行[ player ] = new CCounter( 1, 42, 70, TJAPlayer3.Timer );
+            this.ct進行[ player ] = new CCounter( 1, 42, 42, TJAPlayer3.Timer );
             this.nCombo_渡[player] = nCombo;
 		}
 
