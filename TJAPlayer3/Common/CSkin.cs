@@ -2721,10 +2721,10 @@ namespace TJAPlayer3
         public int[] Game_CourseSymbol_Y = new int[] { 233, 426 };
         #endregion
         #region PanelFont
-        public int Game_MusicName_X = 1158;
+        public int Game_MusicName_X = 1265;
         public int Game_MusicName_Y = 6;
         public int Game_MusicName_FontSize = 27;
-        public ReferencePoint Game_MusicName_ReferencePoint = ReferencePoint.Center;
+        public ReferencePoint Game_MusicName_ReferencePoint = ReferencePoint.Right;
         public int Game_Genre_X = 1011;
         public int Game_Genre_Y = 64;
         public int Game_Lyric_X = 640;
