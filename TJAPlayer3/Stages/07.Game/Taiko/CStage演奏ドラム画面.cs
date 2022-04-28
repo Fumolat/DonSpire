@@ -40,7 +40,6 @@ namespace TJAPlayer3
 			base.list子Activities.Add( this.actPanel = new CAct演奏パネル文字列() );
 			base.list子Activities.Add( this.actStageFailed = new CAct演奏ステージ失敗() );
 			base.list子Activities.Add( this.actPlayInfo = new CAct演奏演奏情報() );
-			//base.list子Activities.Add( this.actFI = new CActFIFOBlack() );
             base.list子Activities.Add( this.actFI = new CActFIFOStart() );
 			base.list子Activities.Add( this.actFO = new CActFIFOBlack() );
 			base.list子Activities.Add( this.actFOClear = new CActFIFOResult() );
@@ -218,24 +217,11 @@ namespace TJAPlayer3
 			// MODIFY_END #25398
 			dtLastQueueOperation = DateTime.MinValue;
 
-            //int nUnit = (int)( ( ( 60.0 / ( CDTXMania.stage演奏ドラム画面.actPlayInfo.dbBPM ) ) ) * 1000.0 / this.actChara.arモーション番号.Length );
-            //int nUnit_gogo = (int)((60.0 / ( CDTXMania.stage演奏ドラム画面.actPlayInfo.dbBPM ) / this.actChara.arゴーゴーモーション番号.Length ) * 1000 );
-
-            //double dbUnit = ( ( ( 60.0 / ( CDTXMania.stage演奏ドラム画面.actPlayInfo.dbBPM ) ) ) );
-            //double dbUnit_gogo = ( ( ( 60.0 / ( CDTXMania.stage演奏ドラム画面.actPlayInfo.dbBPM ) ) ) / this.actChara.arゴーゴーモーション番号.Length );
-
             double dbPtn_Normal = (60.0 / TJAPlayer3.stage演奏ドラム画面.actPlayInfo.dbBPM) * TJAPlayer3.Skin.Game_Chara_Beat_Normal / this.actChara.arモーション番号.Length;
             double dbPtn_Clear = (60.0 / TJAPlayer3.stage演奏ドラム画面.actPlayInfo.dbBPM) * TJAPlayer3.Skin.Game_Chara_Beat_Clear / this.actChara.arクリアモーション番号.Length;
             double dbPtn_GoGo = (60.0 / TJAPlayer3.stage演奏ドラム画面.actPlayInfo.dbBPM) * TJAPlayer3.Skin.Game_Chara_Beat_GoGo / this.actChara.arゴーゴーモーション番号.Length;
 
             PuchiChara.ChangeBPM(60.0 / TJAPlayer3.stage演奏ドラム画面.actPlayInfo.dbBPM);
-
-            //dbUnit = Math.Ceiling( dbUnit * 1000.0 );
-            //dbUnit = dbUnit / 1000.0;
-
-            //this.actChara.ctChara_Normal = new CCounter( 0, this.actChara.arモーション番号.Length - 1, dbPtn_Normal, CSound管理.rc演奏用タイマ );
-            ////this.actChara.ct通常モーション = new CCounter( 0, this.actChara.arモーション番号.Length - 1, 0.07, CSound管理.rc演奏用タイマ );
-            //this.actChara.ctChara_GoGo = new CCounter( 0, this.actChara.arゴーゴーモーション番号.Length - 1, dbPtn_GoGo, CSound管理.rc演奏用タイマ );
 
             for(int nPlayer = 0; nPlayer < 2; nPlayer++)
             {
@@ -265,11 +251,6 @@ namespace TJAPlayer3
                 }
             }
 
-            //if (this.actChara.ctキャラクターアクションタイマ != null) this.actChara.ctキャラクターアクションタイマ = new CCounter();
-
-            //this.actDancer.ct通常モーション = new CCounter( 0, this.actDancer.arモーション番号_通常.Length - 1, ( dbUnit * 4.0) / this.actDancer.arモーション番号_通常.Length, CSound管理.rc演奏用タイマ );
-            //this.actDancer.ctモブ = new CCounter( 1.0, 16.0, ((60.0 / CDTXMania.stage演奏ドラム画面.actPlayInfo.dbBPM / 16.0 )), CSound管理.rc演奏用タイマ );
-
             if(this.actDancer.ct踊り子モーション != null)
             {
                 double dbUnit_dancer = (((60 / (TJAPlayer3.stage演奏ドラム画面.actPlayInfo.dbBPM))) / this.actDancer.ar踊り子モーション番号.Length);
@@ -282,15 +263,6 @@ namespace TJAPlayer3
             this.ct手つなぎ = new CCounter( 0, 60, 20, TJAPlayer3.Timer );
             this.ShownLyric2 = 0;
 
-            //try
-            //{
-            //    this.stream = new StreamWriter("noteTest.txt", false);
-            //}
-            //catch (Exception ex)
-            //{
-            //    this.stream.Close();
-            //    this.stream = new StreamWriter("noteTest.txt", false);
-            //}
             // Discord Presence の更新
             var difficultyName = TJAPlayer3.DifficultyNumberToEnum(TJAPlayer3.stage選曲.n確定された曲の難易度[0]).ToString();
             Discord.UpdatePresence(TJAPlayer3.ConfigIni.SendDiscordPlayingInformation ? TJAPlayer3.DTX.strファイル名 : "",
@@ -311,20 +283,6 @@ namespace TJAPlayer3
 		{
 			if( !base.b活性化してない )
 			{
-				//this.t背景テクスチャの生成();
-				//this.tx太鼓ノーツ = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_taiko_notes.png" ) );
-				//this.txHand = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_taiko_notes_arm.png" ) );
-				//this.txSenotes = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_senotes.png" ) );
-				//this.tx小節線 = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_bar_line.png" ) );
-				//this.tx小節線_branch = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_bar_line_branch.png" ) );
-    //            this.tx判定数小文字 = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\8_Result_number_s.png" ) );
-    //            this.txNamePlate = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_NamePlate.png" ) );
-    //            if (CDTXMania.stage演奏ドラム画面.bDoublePlay)
-    //                this.txNamePlate2P = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_NamePlate2P.png" ) );
-    //            this.txPlayerNumber = CDTXMania.tテクスチャの生成(CSkin.Path(@"Graphics\7_PlayerNumber.png"));
-
-    //            this.tx判定数表示パネル = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_Paramater Panel.png" ) );
-
 			    // When performing calibration, reduce audio distraction from user input.
 			    // For users who play primarily by listening to the music,
 			    // you might think that we want them to hear drum sound effects during
@@ -362,25 +320,6 @@ namespace TJAPlayer3
 		{
 			if( !base.b活性化してない )
 			{
-				////CDTXMania.tテクスチャの解放( ref this.tx背景 );
-				//CDTXMania.tテクスチャの解放( ref this.txヒットバー );
-				//CDTXMania.tテクスチャの解放( ref this.txヒットバーGB );
-				//CDTXMania.tテクスチャの解放( ref this.txチップ );
-    //            //CDTXMania.tテクスチャの解放( ref this.tx太鼓ノーツ );
-    //            CDTXMania.tテクスチャの解放( ref this.txHand );
-    //            CDTXMania.tテクスチャの解放( ref this.txSenotes );
-    //            CDTXMania.tテクスチャの解放( ref this.tx小節線 );
-    //            CDTXMania.tテクスチャの解放( ref this.tx小節線_branch );
-				//CDTXMania.tテクスチャの解放( ref this.txレーンフレームGB );
-				////CDTXMania.tテクスチャの解放( ref this.txWailing枠 );
-
-    //            CDTXMania.tテクスチャの解放( ref this.tx判定数表示パネル );
-    //            CDTXMania.tテクスチャの解放( ref this.tx判定数小文字 );
-    //            CDTXMania.tテクスチャの解放( ref this.txNamePlate );
-    //            if (CDTXMania.stage演奏ドラム画面.bDoublePlay)
-    //                CDTXMania.tテクスチャの解放( ref this.txNamePlate2P );
-    //            CDTXMania.tテクスチャの解放( ref this.txPlayerNumber);
-
                 if( this.soundRed != null )
                     this.soundRed.t解放する();
                 if( this.soundBlue != null )
@@ -469,11 +408,6 @@ namespace TJAPlayer3
                 if(!TJAPlayer3.ConfigIni.bAVI有効 && !bDoublePlay && TJAPlayer3.ConfigIni.ShowFooter && !TJAPlayer3.ConfigIni.bTokkunMode)
                     this.actFooter.On進行描画();
 
-                //this.t進行描画_グラフ();   // #24074 2011.01.23 add ikanick
-
-
-                //this.t進行描画_DANGER();
-                //this.t進行描画_判定ライン();
                 if (!TJAPlayer3.ConfigIni.bNoInfo && TJAPlayer3.ConfigIni.bTokkunMode)
                     this.t進行描画_ネームプレート();
                 if( TJAPlayer3.ConfigIni.ShowChara )
@@ -489,8 +423,6 @@ namespace TJAPlayer3
 				this.t進行描画_チップアニメ();
 
                 this.actLaneTaiko.On進行描画();
-                //this.t進行描画_レーン();
-				//this.t進行描画_レーンフラッシュD();
 
                 if( ( TJAPlayer3.ConfigIni.eClipDispType == EClipDispType.ウィンドウのみ || TJAPlayer3.ConfigIni.eClipDispType == EClipDispType.両方 ) && TJAPlayer3.ConfigIni.nPlayerCount == 1 )
                     this.actAVI.t窓表示();
@@ -555,7 +487,6 @@ namespace TJAPlayer3
                 this.t全体制御メソッド();
                 
                 this.actPauseMenu.t進行描画();
-                //this.actEnd.On進行描画();
 				this.t進行描画_STAGEFAILED();
 
                 this.ScoreRank.On進行描画();
@@ -607,14 +538,6 @@ namespace TJAPlayer3
                     base.eフェーズID = CStage.Eフェーズ.演奏_STAGE_CLEAR_フェードアウト;
                     this.actFOClear.tフェードアウト開始();
                 }
-
-
-                //if( bIsFinishedPlaying && ( base.eフェーズID == CStage.Eフェーズ.共通_通常状態 ) )
-                //{
-                //    this.eフェードアウト完了時の戻り値 = E演奏画面の戻り値.ステージクリア;
-                //    base.eフェーズID = CStage.Eフェーズ.演奏_STAGE_CLEAR_フェードアウト;
-                //    this.actFOClear.tフェードアウト開始();
-                //}
 
 				if( bIsFinishedFadeout )
 				{
@@ -673,17 +596,9 @@ namespace TJAPlayer3
         private CCounter ct手つなぎ;
         private CTexture txヒットバーGB;
 		private CTexture txレーンフレームGB;
-        //private CTexture tx太鼓ノーツ;
-        //private CTexture txHand;
-        //private CTexture txSenotes;
-        //private CTexture tx小節線;
-        //private CTexture tx小節線_branch;
 
         private CTexture tx判定数表示パネル;
         private CTexture tx判定数小文字;
-        //private CTexture txNamePlate; //ちょっと描画順で都合が悪くなるので移動。
-        //private CTexture txNamePlate2P; //ちょっと描画順で都合が悪くなるので移動。
-        //private CTexture txPlayerNumber;
 
         private CTexture txMovie; //2016.08.30 kairera0467 ウィンドウ表示
 
@@ -834,8 +749,6 @@ namespace TJAPlayer3
                         break;
                 }
 
-
-                //this.actChipFireTaiko.Start( nFly, nPlayer );
                 this.actTaikoLaneFlash.PlayerLane[nPlayer].Start(PlayerLane.FlashType.Hit);
                 this.FlyingNotes.Start(nFly, nPlayer);
 			}

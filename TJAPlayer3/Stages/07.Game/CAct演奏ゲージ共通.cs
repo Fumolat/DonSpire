@@ -21,11 +21,6 @@ namespace TJAPlayer3
         public CActLVLNFont actLVLNFont { get; protected set; }
 
         // コンストラクタ
-        public CAct演奏ゲージ共通()
-        {
-            //actLVLNFont = new CActLVLNFont();		// On活性化()に移動
-            //actLVLNFont.On活性化();
-        }
 
         // CActivity 実装
 
@@ -240,10 +235,6 @@ namespace TJAPlayer3
                 this.dbゲージ増加量_Branch[i, 1][nPlayer] = (float)(nGaugeRankValue_branch[i] / 100.0f) * 0.5f;
                 this.dbゲージ増加量_Branch[i, 2][nPlayer] = (float)(nGaugeRankValue_branch[i] / 100.0f) * dbDamageRate;
             }
-
-            //this.dbゲージ増加量[ 0 ] = CDTXMania.DTX.bチップがある.Branch ? ( 130.0 / CDTXMania.DTX.nノーツ数[ 0 ] ) : ( 130.0 / CDTXMania.DTX.nノーツ数[ 3 ] );
-            //this.dbゲージ増加量[ 1 ] = CDTXMania.DTX.bチップがある.Branch ? ( 65.0 / CDTXMania.DTX.nノーツ数[ 0 ] ) : 65.0 / CDTXMania.DTX.nノーツ数[ 3 ];
-            //this.dbゲージ増加量[ 2 ] = CDTXMania.DTX.bチップがある.Branch ? ( -260.0 / CDTXMania.DTX.nノーツ数[ 0 ] ) : -260.0 / CDTXMania.DTX.nノーツ数[ 3 ];
 
             //2015.03.26 kairera0467 計算を初期化時にするよう修正。
 
@@ -502,9 +493,6 @@ namespace TJAPlayer3
                 this.db現在のゲージ値[nPlayer] = 100.0;
             else if (this.db現在のゲージ値[nPlayer] <= 0.0)
                 this.db現在のゲージ値[nPlayer] = 0.0;
-
-
-            //CDTXMania.stage演奏ドラム画面.nGauge = fDamage;
 
         }
 

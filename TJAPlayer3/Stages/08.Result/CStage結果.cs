@@ -196,17 +196,6 @@ namespace TJAPlayer3
 						this.b新記録スキル[0] = true;
 						ini.stセクション[0] = this.st演奏記録[0];
 					}
-
-					// Clear & Score rank (Legacy)
-					/*
-					if(TJAPlayer3.stage選曲.n確定された曲の難易度[0] != (int)Difficulty.Dan && TJAPlayer3.stage選曲.n確定された曲の難易度[0] != (int)Difficulty.Tower)
-					{
-						if (this.nクリア > ini.stセクション[0].nクリア[TJAPlayer3.stage選曲.n確定された曲の難易度[0]])
-							ini.stセクション[0].nクリア[TJAPlayer3.stage選曲.n確定された曲の難易度[0]] = this.nクリア;
-						if (this.nスコアランク > ini.stセクション[0].nスコアランク[TJAPlayer3.stage選曲.n確定された曲の難易度[0]])
-							ini.stセクション[0].nスコアランク[TJAPlayer3.stage選曲.n確定された曲の難易度[0]] = this.nスコアランク;
-					}
-					*/
 					
 					// ラストプレイ #23595 2011.1.9 ikanick
 					// オートじゃなければプレイ結果を書き込む
@@ -267,10 +256,6 @@ namespace TJAPlayer3
 			{
 				b音声再生 = false;
 				this.EndAnime = false;
-				//this.tx背景 = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\8_background.png" ) );
-				//this.tx上部パネル = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\8_header.png" ) );
-				//this.tx下部パネル = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\8_footer panel.png" ), true );
-				//this.txオプションパネル = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\Screen option panels.png" ) );
 				base.OnManagedリソースの作成();
 			}
 		}
@@ -282,10 +267,6 @@ namespace TJAPlayer3
 				{
 					this.ct登場用 = null;
 				}
-				//CDTXMania.tテクスチャの解放( ref this.tx背景 );
-				//CDTXMania.tテクスチャの解放( ref this.tx上部パネル );
-				//CDTXMania.tテクスチャの解放( ref this.tx下部パネル );
-				//CDTXMania.tテクスチャの解放( ref this.txオプションパネル );
 				base.OnManagedリソースの解放();
 			}
 		}

@@ -92,8 +92,6 @@ namespace TJAPlayer3
 
                         if(TJAPlayer3.Tx.Effects_Rainbow != null && this.Rainbow1P[f].Player == 0 ) //画像が出来るまで
                         {
-                            //this.st虹[f].ct進行.n現在の値 = 164;
-
                             if (this.Rainbow1P[f].Counter.n現在の値 < 82)
                             {
                                 int nRectX = ((this.Rainbow1P[f].Counter.n現在の値 * 920) / 85);
@@ -104,7 +102,6 @@ namespace TJAPlayer3
                                 int nRectX = (((this.Rainbow1P[f].Counter.n現在の値 - 82) * 920) / 85);
                                 TJAPlayer3.Tx.Effects_Rainbow.t2D描画(TJAPlayer3.app.Device, 360 + nRectX, -100, new Rectangle(nRectX, 0, 920 - nRectX, 410));
                             }
-
                         }
 
                     }
@@ -122,8 +119,6 @@ namespace TJAPlayer3
 
                         if(TJAPlayer3.Tx.Effects_Rainbow != null && this.Rainbow2P[f].Player == 1 ) //画像が出来るまで
                         {
-                            //this.st虹[f].ct進行.n現在の値 = 164;
-
                             if (this.Rainbow2P[f].Counter.n現在の値 < 82)
                             {
                                 int nRectX = ((this.Rainbow2P[f].Counter.n現在の値 * 920) / 85);

@@ -24,8 +24,6 @@ namespace TJAPlayer3
 			{
 				this.bDanger中[i] = false;
 			}
-//			this.ct移動用 = new CCounter();
-//			this.ct透明度用 = new CCounter();
 			this.ct移動用 = null;
 			this.ct透明度用 = null;
 
