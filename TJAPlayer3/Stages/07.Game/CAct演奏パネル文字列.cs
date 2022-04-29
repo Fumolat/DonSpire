@@ -135,12 +135,8 @@ namespace TJAPlayer3
                         }
                     }
                 }
-
 			    this.ct進行用 = new CCounter( 0, 2000, 2, TJAPlayer3.Timer );
 				this.Start();
-
-
-
 			}
 		}
 
@@ -262,12 +258,6 @@ namespace TJAPlayer3
                         {
                             this.txMusicName.t2D描画(TJAPlayer3.app.Device, TJAPlayer3.Skin.Game_MusicName_X - (this.txMusicName.szテクスチャサイズ.Width * fRate), TJAPlayer3.Skin.Game_MusicName_Y);
                         }
-                        /*
-                        if (this.txMusicName.szテクスチャサイズ.Width >= 195)
-                            this.txMusicName.t2D描画(TJAPlayer3.app.Device, TJAPlayer3.Skin.Game_MusicName_X - ((this.txMusicName.szテクスチャサイズ.Width * fRate) / 2) - (this.txMusicName.szテクスチャサイズ.Width / 2), TJAPlayer3.Skin.Game_MusicName_Y);
-                        else
-                            this.txMusicName.t2D描画(TJAPlayer3.app.Device, TJAPlayer3.Skin.Game_MusicName_X - ((this.txMusicName.szテクスチャサイズ.Width * fRate) / 2), TJAPlayer3.Skin.Game_MusicName_Y);
-                        */
                     }
                 }
                 else
@@ -314,27 +304,8 @@ namespace TJAPlayer3
                         {
                             this.txMusicName.t2D描画(TJAPlayer3.app.Device, TJAPlayer3.Skin.Game_MusicName_X - (this.txMusicName.szテクスチャサイズ.Width * txMusicName.vc拡大縮小倍率.X), TJAPlayer3.Skin.Game_MusicName_Y);
                         }
-                        /*
-                        if (this.txMusicName != null)
-                        {
-                            float fRate = 660.0f / this.txMusicName.szテクスチャサイズ.Width;
-                            if (this.txMusicName.szテクスチャサイズ.Width <= 660.0f)
-                                fRate = 1.0f;
-
-                            this.txMusicName.vc拡大縮小倍率.X = fRate;
-
-                            if (this.txMusicName.szテクスチャサイズ.Width >= 195)
-                                this.txMusicName.t2D描画(TJAPlayer3.app.Device, TJAPlayer3.Skin.Game_MusicName_X - ((this.txMusicName.szテクスチャサイズ.Width * fRate) / 2) - ((this.txMusicName.szテクスチャサイズ.Width - 195) / 2), TJAPlayer3.Skin.Game_MusicName_Y);
-                            else
-                                this.txMusicName.t2D描画(TJAPlayer3.app.Device, TJAPlayer3.Skin.Game_MusicName_X - ((this.txMusicName.szテクスチャサイズ.Width * fRate) / 2), TJAPlayer3.Skin.Game_MusicName_Y);
-                        }
-                        */
                     }
                 }
-
-                //CDTXMania.act文字コンソール.tPrint( 0, 0, C文字コンソール.Eフォント種別.白, this.ct進行用.n現在の値.ToString() );
-
-				//this.txMusicName.t2D描画( CDTXMania.app.Device, 1250 - this.txMusicName.szテクスチャサイズ.Width, 14 );
 			}
 			return 0;
 		}

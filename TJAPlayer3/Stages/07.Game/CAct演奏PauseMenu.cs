@@ -55,10 +55,6 @@ namespace TJAPlayer3
 			this.bやり直しを選択した = false;
 			base.tActivatePopupMenu( einst );
 		}
-		//public void tDeativatePopupMenu()
-		//{
-		//	base.tDeativatePopupMenu();
-		//}
 
 		public override void t進行描画sub()
 		{

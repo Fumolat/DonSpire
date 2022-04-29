@@ -11,14 +11,12 @@ namespace TJAPlayer3
 
 		public STDGBVALUE<double> db現在の譜面スクロール速度;
 
-
 		// コンストラクタ
 
 		public CAct演奏スクロール速度()
 		{
 			base.b活性化してない = true;
 		}
-
 
 		// CActivity 実装
 
@@ -74,7 +72,6 @@ namespace TJAPlayer3
 			}
 			return 0;
 		}
-
 
 		// その他
 

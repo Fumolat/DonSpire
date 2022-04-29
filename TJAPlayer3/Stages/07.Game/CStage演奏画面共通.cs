@@ -351,9 +351,6 @@ namespace TJAPlayer3
 
             this.bIsAutoPlay = TJAPlayer3.ConfigIni.bAutoPlay;									// #24239 2011.1.23 yyagi
 
-            //this.bIsAutoPlay.Guitar = CDTXMania.ConfigIni.bギターが全部オートプレイである;
-            //this.bIsAutoPlay.Bass = CDTXMania.ConfigIni.bベースが全部オートプレイである;
-            //			this.nRisky = CDTXMania.ConfigIni.nRisky;											// #23559 2011.7.28 yyagi
             actGauge.Init( TJAPlayer3.ConfigIni.nRisky, 0 );									// #23559 2011.7.28 yyagi
             if(bDoublePlay) actGauge.Init( TJAPlayer3.ConfigIni.nRisky, 1 );									// #23559 2011.7.28 yyagi
 			this.nPolyphonicSounds = TJAPlayer3.ConfigIni.nPoliphonicSounds;
@@ -416,9 +413,6 @@ namespace TJAPlayer3
 
 
             this.sw = new Stopwatch();
-			//          this.sw2 = new Stopwatch();
-            //			this.gclatencymode = GCSettings.LatencyMode;
-            //			GCSettings.LatencyMode = GCLatencyMode.Batch;	// 演奏画面中はGCを抑止する
             this.bIsAlreadyCleared = new bool[2];
             this.bIsAlreadyMaxed = new bool[2];
 
@@ -1510,22 +1504,6 @@ namespace TJAPlayer3
                                 this.eRollState = E連打State.roll;
                                 this.tRollProcess(pChip, (CSound管理.rc演奏用タイマ.n現在時刻 * (((double)TJAPlayer3.ConfigIni.n演奏速度) / 20.0)), 1, nNowInput, 0, nPlayer);
                             }
-
-                            //if ((int)CSound管理.rc演奏用タイマ.n現在時刻ms >= pChip.nノーツ終了時刻ms)
-                            //{
-                            //    if (actChara.CharaAction_Balloon_Breaking.b進行中)
-                            //    {
-                            //        this.actChara.bマイどんアクション中 = false; // 風船終了後、再生されていたアクションがされないようにするために追加。(AioiLight)
-                            //        if (actChara.CharaAction_Balloon_Miss != null)
-                            //        {
-                            //            actChara.アクションタイマーリセット();
-                            //            actChara.bマイどんアクション中 = true;
-                            //            actChara.CharaAction_Balloon_Miss = new CCounter(0, CDTXMania.Skin.Game_Chara_Ptn_Balloon_Miss - 1, CDTXMania.Skin.Game_Chara_Balloon_Timer, CDTXMania.Timer);
-                            //            System.Windows.Forms.MessageBox.Show("");
-                            //        }
-                            //    }
-
-                            //}
 
                             break;
                             //---------------------------

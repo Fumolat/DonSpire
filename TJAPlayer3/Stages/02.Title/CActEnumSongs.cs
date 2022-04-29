@@ -66,24 +66,6 @@ namespace TJAPlayer3
 		{
 			if ( this.b活性化してない )
 				return;
-			//string pathNowEnumeratingSongs = CSkin.Path( @"Graphics\ScreenTitle NowEnumeratingSongs.png" );
-			//if ( File.Exists( pathNowEnumeratingSongs ) )
-			//{
-			//	this.txNowEnumeratingSongs = CDTXMania.tテクスチャの生成( pathNowEnumeratingSongs, false );
-			//}
-			//else
-			//{
-			//	this.txNowEnumeratingSongs = null;
-			//}
-			//string pathDialogNowEnumeratingSongs = CSkin.Path( @"Graphics\ScreenConfig NowEnumeratingSongs.png" );
-			//if ( File.Exists( pathDialogNowEnumeratingSongs ) )
-			//{
-			//	this.txDialogNowEnumeratingSongs = CDTXMania.tテクスチャの生成( pathDialogNowEnumeratingSongs, false );
-			//}
-			//else
-			//{
-			//	this.txDialogNowEnumeratingSongs = null;
-			//}
 
 			try
 			{
@@ -132,8 +114,6 @@ namespace TJAPlayer3
 			if ( this.b活性化してない )
 				return;
 
-			//CDTXMania.t安全にDisposeする( ref this.txDialogNowEnumeratingSongs );
-			//CDTXMania.t安全にDisposeする( ref this.txNowEnumeratingSongs );
 			TJAPlayer3.t安全にDisposeする( ref this.txMessage );
 			base.OnManagedリソースの解放();
 		}
@@ -161,8 +141,6 @@ namespace TJAPlayer3
 
 
 		private CCounter ctNowEnumeratingSongs;
-		//private CTexture txNowEnumeratingSongs = null;
-		//private CTexture txDialogNowEnumeratingSongs = null;
 		private CTexture txMessage;
 	}
 }

@@ -62,7 +62,6 @@ namespace TJAPlayer3
 
 		#region [ private ]
 		//-----------------
-		//private STDGBVALUE<int> nJudgeLinePosY_delta = new STDGBVALUE<int>();
 		C演奏判定ライン座標共通 _演奏判定ライン座標 = new C演奏判定ライン座標共通();
 		//-----------------
 		#endregion

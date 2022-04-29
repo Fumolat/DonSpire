@@ -101,10 +101,6 @@ namespace TJAPlayer3
 		{
 			if( !base.b活性化してない )
 			{
-    //            this.txBlack = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\Tile black 64x64.png" ) );
-				//this.txStageFailed = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_stage_failed.jpg" ) );
-				//this.txGameFailed = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_GameFailed.png" ) );
-    //            this.tx数字 = CDTXMania.tテクスチャの生成( CSkin.Path( @"Graphics\7_RollNumber.png" ) );
 				base.OnManagedリソースの作成();
 			}
 		}
@@ -112,10 +108,6 @@ namespace TJAPlayer3
 		{
 			if( !base.b活性化してない )
 			{
-				//CDTXMania.tテクスチャの解放( ref this.txStageFailed );
-				//CDTXMania.tテクスチャの解放( ref this.txGameFailed );
-    //            CDTXMania.tテクスチャの解放( ref this.txBlack );
-    //            CDTXMania.tテクスチャの解放( ref this.tx数字 );
 				base.OnManagedリソースの解放();
 			}
 		}
@@ -151,11 +143,6 @@ namespace TJAPlayer3
                     int num = (TJAPlayer3.DTX.listChip.Count > 0) ? TJAPlayer3.DTX.listChip[TJAPlayer3.DTX.listChip.Count - 1].n発声時刻ms : 0;
                     this.t文字表示(640, 520, (((this.dbFailedTime) / 1000.0) / (((double)num) / 1000.0) * 100).ToString("##0") + "%");
                 }
-
-                //int num = ( CDTXMania.DTX.listChip.Count > 0 ) ? CDTXMania.DTX.listChip[ CDTXMania.DTX.listChip.Count - 1 ].n発声時刻ms : 0;
-                //string str = "Time:          " + ( ( ( this.dbFailedTime ) / 1000.0 ) ).ToString( "####0.00" ) + " / " + ( ( ( ( double ) num ) / 1000.0 ) ).ToString( "####0.00" );
-                //CDTXMania.act文字コンソール.tPrint( 0, 0, C文字コンソール.Eフォント種別.白, str );
-
             }
             else
             {
@@ -206,10 +193,6 @@ namespace TJAPlayer3
 		private bool b効果音再生済み;
 		private CCounter ct進行;
 		private CSound sd効果音;
-		//private CTexture txStageFailed;
-  //      private CTexture txGameFailed;
-  //      private CTexture txBlack;
-  //      private CTexture tx数字;
         private double dbFailedTime;
 		//-----------------
         private ST文字位置[] st文字位置;
