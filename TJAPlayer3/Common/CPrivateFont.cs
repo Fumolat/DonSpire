@@ -67,10 +67,10 @@ namespace TJAPlayer3
 		{
 			Initialize( fontpath, null, pt, FontStyle.Regular );
 		}
-		public CPrivateFont()
-		{
+		//public CPrivateFont()
+		//{
 			//throw new ArgumentException("CPrivateFont: 引数があるコンストラクタを使用してください。");
-		}
+		//}
 		#endregion
 
 		protected void Initialize( string fontpath, FontFamily fontfamily, int pt, FontStyle style )
@@ -98,25 +98,8 @@ namespace TJAPlayer3
 				catch (System.IO.FileNotFoundException)
 				{
 					Trace.TraceWarning("プライベートフォントの追加に失敗しました({0})。代わりにMS UI Gothicの使用を試みます。", fontpath);
-					//throw new FileNotFoundException( "プライベートフォントの追加に失敗しました。({0})", Path.GetFileName( fontpath ) );
-					//return;
 					_fontfamily = null;
 				}
-
-				//foreach ( FontFamily ff in _pfc.Families )
-				//{
-				//	Debug.WriteLine( "fontname=" + ff.Name );
-				//	if ( ff.Name == Path.GetFileNameWithoutExtension( fontpath ) )
-				//	{
-				//		_fontfamily = ff;
-				//		break;
-				//	}
-				//}
-				//if ( _fontfamily == null )
-				//{
-				//	Trace.TraceError( "プライベートフォントの追加後、検索に失敗しました。({0})", fontpath );
-				//	return;
-				//}
 			}
 
 			// 指定されたフォントスタイルが適用できない場合は、フォント内で定義されているスタイルから候補を選んで使用する
@@ -517,18 +500,6 @@ namespace TJAPlayer3
 				return new Bitmap(1, 1);
 			}
 
-            //StreamWriter stream = stream = new StreamWriter("Test.txt", false);
-
-            //try
-            //{
-            //    stream = new StreamWriter("Test.txt", false);
-            //}
-            //catch (Exception ex)
-            //{
-            //    stream.Close();
-            //    stream = new StreamWriter("Test.txt", false);
-            //}
-
             string[] strName =  new string[ drawstr.Length ];
             for( int i = 0; i < drawstr.Length; i++ ) strName[i] = drawstr.Substring(i, 1);
 
@@ -753,161 +724,6 @@ namespace TJAPlayer3
 			//return bmp;
             return bmpCambus;
 		}
-
-        ///// <summary>
-        ///// 文字列を描画したテクスチャを返す(メイン処理)
-        ///// </summary>
-        ///// <param name="rectDrawn">描画された領域</param>
-        ///// <param name="ptOrigin">描画文字列</param>
-        ///// <param name="drawstr">描画文字列</param>
-        ///// <param name="drawmode">描画モード</param>
-        ///// <param name="fontColor">描画色</param>
-        ///// <param name="edgeColor">縁取色</param>
-        ///// <param name="gradationTopColor">グラデーション 上側の色</param>
-        ///// <param name="gradationBottomColor">グラデーション 下側の色</param>
-        ///// <returns>描画済テクスチャ</returns>
-        //protected Bitmap DrawPrivateFont_V( string drawstr, Color fontColor, Color edgeColor, bool bVertical )
-        //{
-        //    if ( this._fontfamily == null || drawstr == null || drawstr == "" )
-        //    {
-        //        // nullを返すと、その後bmp→texture処理や、textureのサイズを見て__の処理で全部例外が発生することになる。
-        //        // それは非常に面倒なので、最小限のbitmapを返してしまう。
-        //        // まずはこの仕様で進めますが、問題有れば(上位側からエラー検出が必要であれば)例外を出したりエラー状態であるプロパティを定義するなり検討します。
-        //        if ( drawstr != "" )
-        //        {
-        //            Trace.TraceWarning( "DrawPrivateFont()の入力不正。最小値のbitmapを返します。" );
-        //        }
-        //        _rectStrings = new Rectangle( 0, 0, 0, 0 );
-        //        _ptOrigin = new Point( 0, 0 );
-        //        return new Bitmap(1, 1);
-        //    }
-
-        //    //StreamWriter stream = stream = new StreamWriter("Test.txt", false);
-
-        //    //try
-        //    //{
-        //    //    stream = new StreamWriter("Test.txt", false);
-        //    //}
-        //    //catch (Exception ex)
-        //    //{
-        //    //    stream.Close();
-        //    //    stream = new StreamWriter("Test.txt", false);
-        //    //}
-
-        //    string[] strName = new string[] { "焼","肉","定","食", "X", "G", "t", "e", "s", "t" };
-        //    strName = new string[ drawstr.Length ];
-        //    for( int i = 0; i < drawstr.Length; i++ ) strName[i] = drawstr.Substring(i, 1);
-            
-
-        //    Bitmap bmpCambus = new Bitmap( 48, ( drawstr.Length * 31 ) );
-        //    Graphics Gcambus = Graphics.FromImage( bmpCambus );
-
-        //    //キャンバス作成→1文字ずつ作成してキャンバスに描画という形がよさそうかな?
-
-        //    int nStartPos = 0;
-        //    int nNowPos = 0;
-
-        //    //forループで1文字ずつbitmap作成?
-        //    for( int i = 0; i < strName.Length; i++ )
-        //    {
-        //        Size strSize = System.Windows.Forms.TextRenderer.MeasureText( strName[ i ], this._font, new Size( int.MaxValue, int.MaxValue ),
-        //        System.Windows.Forms.TextFormatFlags.NoPrefix |
-        //        System.Windows.Forms.TextFormatFlags.NoPadding );
-
-        //        //Bitmap bmpV = new Bitmap( strSize.Width + 12, ( strSize.Height + 12 ) - 6 );
-        //        Bitmap bmpV = new Bitmap( 36, ( strSize.Height + 12 ) - 6 );
-        //        bmpV.MakeTransparent();
-        //        Graphics gV = Graphics.FromImage( bmpV );
-        //        gV.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-
-        //        StringFormat sFormat = new StringFormat();
-        //        sFormat.LineAlignment = StringAlignment.Center;	// 画面下部（垂直方向位置）
-        //        sFormat.Alignment = StringAlignment.Center;	// 画面中央（水平方向位置）
-
-
-        //        //Rectangle rect = new Rectangle( 0, 0, strSize.Width + 12, ( strSize.Height + 12 ));
-        //        Rectangle rect = new Rectangle( 0, 0, 36, ( strSize.Height + 12 ));
-
-        //        // DrawPathで、ポイントサイズを使って描画するために、DPIを使って単位変換する
-        //        // (これをしないと、単位が違うために、小さめに描画されてしまう)
-        //        float sizeInPixels = _font.SizeInPoints * gV.DpiY / 72;  // 1 inch = 72 points
-
-        //        System.Drawing.Drawing2D.GraphicsPath gpV = new System.Drawing.Drawing2D.GraphicsPath();
-        //        gpV.AddString( strName[ i ], this._fontfamily, (int) this._font.Style, sizeInPixels, rect, sFormat );
-
-
-        //        Rectangle rect正確なサイズ = this.MeasureStringPrecisely( gV, strName[ i ], this._font, strSize, sFormat );
-
-        //        // 縁取りを描画する
-        //        Pen pV = new Pen( edgeColor, 6 );
-        //        pV.LineJoin = System.Drawing.Drawing2D.LineJoin.Round;
-        //        gV.DrawPath( pV, gpV );
-
-        //        // 塗りつぶす
-        //        Brush brV;
-        //        {
-        //            brV = new SolidBrush( fontColor );
-        //        }
-        //        gV.FillPath( brV, gpV );
-
-        //        if ( brV != null ) brV.Dispose(); brV = null;
-        //        if ( pV != null ) pV.Dispose(); pV = null;
-        //        if ( gpV != null ) gpV.Dispose(); gpV = null;
-
-        //        int n補正 = 0;
-
-        //        //bmpV.Save( "String" + i.ToString() + ".png" );
-        //        if( strName[ i ] == "ー" || strName[ i ] == "-" || strName[ i ] == "～")
-        //        {
-        //            bmpV.RotateFlip( RotateFlipType.Rotate90FlipNone );
-        //            nNowPos = nNowPos + 20;
-        //            n補正 = 2;
-        //        }
-        //        else if( strName[ i ] == "<" || strName[ i ] == ">" || strName[ i ] == "(" || strName[ i ] == ")" )
-        //        {
-        //            bmpV.RotateFlip( RotateFlipType.Rotate90FlipNone );
-        //            nNowPos = nNowPos + 8;
-        //            n補正 = 2;
-        //        }
-        //        else if( strName[ i ] == "_" )
-        //            nNowPos = nNowPos + 20;
-        //        else if( strName[ i ] == " " )
-        //            nNowPos = nNowPos + 10;
-
-        //        int n余白サイズ = strSize.Height - rect正確なサイズ.Height;
-        //        if( i == 0 )
-        //        {
-        //            nStartPos = -n余白サイズ + 2;
-        //            nNowPos = -n余白サイズ + 2;
-        //            Gcambus.DrawImage( bmpV, ( bmpCambus.Size.Width - bmpV.Size.Width ) + n補正, nStartPos );
-        //            //nNowPos += ( rect正確なサイズ.Height + 6 );
-        //        }
-        //        else
-        //        {
-        //            nNowPos += ( strSize.Height - n余白サイズ ) + 4;
-        //            Gcambus.DrawImage( bmpV, ( bmpCambus.Size.Width - bmpV.Size.Width ) + n補正, nNowPos );
-        //        }
-
-        //        if ( bmpV != null ) bmpV.Dispose();
-
-        //        //bmpCambus.Save( "test.png" );
-
-        //        _rectStrings = new Rectangle( 0, 0, strSize.Width, strSize.Height );
-        //        _ptOrigin = new Point( 6 * 2, 6 * 2 );
-
-
-        //        //stream.WriteLine( "黒無しサイズ{0},余白{1},黒あり予測サイズ{2},ポ↑ジ↓{3}",rect正確なサイズ.Height, n余白サイズ, rect正確なサイズ.Height + 6, nNowPos );
-                
-        //    }
-        //    //stream.Close();
-
-        //    //return bmp;
-        //    return bmpCambus;
-        //}
-
-
-        //------------------------------------------------
-        //使用:http://dobon.net/vb/dotnet/graphics/measurestring.html
 
         /// <summary>
         /// Graphics.DrawStringで文字列を描画した時の大きさと位置を正確に計測する
