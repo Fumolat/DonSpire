@@ -2863,25 +2863,6 @@ namespace TJAPlayer3
 			}
 		}
 
-		/// <summary>
-		/// ギターとベースのキーアサイン入れ替え
-		/// </summary>
-		//public void SwapGuitarBassKeyAssign()		// #24063 2011.1.16 yyagi
-		//{
-		//    for ( int j = 0; j <= (int)EKeyConfigPad.Capture; j++ )
-		//    {
-		//        CKeyAssign.STKEYASSIGN t; //= new CConfigIni.CKeyAssign.STKEYASSIGN();
-		//        for ( int k = 0; k < 16; k++ )
-		//        {
-		//            t = this.KeyAssign[ (int)EKeyConfigPart.GUITAR ][ j ][ k ];
-		//            this.KeyAssign[ (int)EKeyConfigPart.GUITAR ][ j ][ k ] = this.KeyAssign[ (int)EKeyConfigPart.BASS ][ j ][ k ];
-		//            this.KeyAssign[ (int)EKeyConfigPart.BASS ][ j ][ k ] = t;
-		//        }
-		//    }
-		//    this.bIsSwappedGuitarBass = !bIsSwappedGuitarBass;
-		//}
-
-
 		// その他
 
 		#region [ private ]

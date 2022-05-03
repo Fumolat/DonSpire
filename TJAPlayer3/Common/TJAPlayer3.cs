@@ -49,9 +49,6 @@ namespace TJAPlayer3
 			?? $"{GetAppDisplayThreePartVersion()} (unknown informational version)";
 		public static readonly string SLIMDXDLL = "c_net20x86_Jun2010";
 		public static readonly string D3DXDLL = "d3dx9_43.dll";		// June 2010
-        //public static readonly string D3DXDLL = "d3dx9_42.dll";	// February 2010
-        //public static readonly string D3DXDLL = "d3dx9_41.dll";	// March 2009
-
 		public static TJAPlayer3 app
 		{
 			get;
@@ -268,11 +265,6 @@ namespace TJAPlayer3
 			get;
 			private set;
 		}
-//		public static CStageオプション stageオプション
-//		{ 
-//			get;
-//			private set;
-//		}
 		public static CStageコンフィグ stageコンフィグ 
 		{ 
 			get; 
@@ -369,7 +361,6 @@ namespace TJAPlayer3
 			get;
 			set;
 		}
-		//		public static CTimer ct;
 		public IntPtr WindowHandle					// 2012.10.24 yyagi; to add ASIO support
 		{
 			get { return base.Window.Handle; }
@@ -410,7 +401,6 @@ namespace TJAPlayer3
 					currentClientSize = this.Window.ClientSize;
 					ConfigIni.nウインドウwidth = this.Window.ClientSize.Width;
 					ConfigIni.nウインドウheight = this.Window.ClientSize.Height;
-//					FDK.CTaskBar.ShowTaskBar( false );
 				}
 #if !WindowedFullscreen
 				base.GraphicsDeviceManager.ChangeDevice( settings );
@@ -428,7 +418,6 @@ namespace TJAPlayer3
 					base.Window.ClientSize =
 						new Size( currentClientSize.Width, currentClientSize.Height );
                     base.Window.Icon = Properties.Resources.tjap3;
-//					FDK.CTaskBar.ShowTaskBar( true );
 				}
 #if WindowedFullscreen
 				else 
@@ -489,13 +478,6 @@ namespace TJAPlayer3
 
 		protected override void Initialize()
 		{
-//			new GCBeep();
-			//sw.Start();
-			//swlist1 = new List<int>( 8192 );
-			//swlist2 = new List<int>( 8192 );
-			//swlist3 = new List<int>( 8192 );
-			//swlist4 = new List<int>( 8192 );
-			//swlist5 = new List<int>( 8192 );
 			if ( this.listトップレベルActivities != null )
 			{
 				foreach( CActivity activity in this.listトップレベルActivities )
@@ -631,7 +613,6 @@ namespace TJAPlayer3
 						{
 							// preview soundの再生
 							string strPreviewFilename = DTXVmode.previewFilename;
-//Trace.TraceInformation( "Preview Filename=" + DTXVmode.previewFilename );
 							try
 							{
 								if ( this.previewSound != null )
@@ -855,21 +836,6 @@ namespace TJAPlayer3
 								#endregion
 								break;
 
-							#region [ OPTION: 廃止済 ]
-//							case 2:									// #24525 OPTIONとCONFIGの統合に伴い、OPTIONは廃止
-//								#region [ *** ]
-//								//-----------------------------
-//								r現在のステージ.On非活性化();
-//								Trace.TraceInformation( "----------------------" );
-//								Trace.TraceInformation( "■ オプション" );
-//								stageオプション.On活性化();
-//								r直前のステージ = r現在のステージ;
-//								r現在のステージ = stageオプション;
-//								//-----------------------------
-//								#endregion
-							//								break;
-							#endregion
-
 							case (int)CStageタイトル.E戻り値.CONFIG:
 								#region [ *** ]
 								//-----------------------------
@@ -903,9 +869,6 @@ namespace TJAPlayer3
 							pg.plugin.Onステージ変更();
 							Directory.SetCurrentDirectory( TJAPlayer3.strEXEのあるフォルダ );
 						}
-
-						//this.tガベージコレクションを実行する();		// #31980 2013.9.3 yyagi タイトル画面でだけ、毎フレームGCを実行して重くなっていた問題の修正
-						//-----------------------------
 						#endregion
 						break;
 
@@ -1016,28 +979,6 @@ namespace TJAPlayer3
 								this.tガベージコレクションを実行する();
 								break;
 							//-----------------------------
-								#endregion
-
-//							case (int) CStage選曲.E戻り値.オプション呼び出し:
-								#region [ *** ]
-//								//-----------------------------
-//								r現在のステージ.On非活性化();
-//								Trace.TraceInformation( "----------------------" );
-//								Trace.TraceInformation( "■ オプション" );
-//								stageオプション.On活性化();
-//								r直前のステージ = r現在のステージ;
-//								r現在のステージ = stageオプション;
-//
-//								foreach( STPlugin pg in this.listプラグイン )
-//								{
-//									Directory.SetCurrentDirectory( pg.strプラグインフォルダ );
-//									pg.plugin.Onステージ変更();
-//									Directory.SetCurrentDirectory( CDTXMania.strEXEのあるフォルダ );
-//								}
-//
-//								this.tガベージコレクションを実行する();
-//								break;
-//							//-----------------------------
 								#endregion
 
 							case (int) CStage選曲.E戻り値.コンフィグ呼び出し:
@@ -1204,18 +1145,6 @@ for (int i = 0; i < 3; i++) {
 
 					case CStage.Eステージ.演奏:
 						#region [ *** ]
-						//-----------------------------
-						//long n1 = FDK.CSound管理.rc演奏用タイマ.nシステム時刻ms;
-						//long n2 = FDK.CSound管理.SoundDevice.n経過時間ms;
-						//long n3 = FDK.CSound管理.SoundDevice.tmシステムタイマ.nシステム時刻ms;
-						//long n4 = FDK.CSound管理.rc演奏用タイマ.n現在時刻;
-						//long n5 = FDK.CSound管理.SoundDevice.n経過時間を更新したシステム時刻ms;
-
-						//swlist1.Add( Convert.ToInt32(n1) );
-						//swlist2.Add( Convert.ToInt32(n2) );
-						//swlist3.Add( Convert.ToInt32( n3 ) );
-						//swlist4.Add( Convert.ToInt32( n4 ) );
-						//swlist5.Add( Convert.ToInt32( n5 ) );
 
 						#region [ DTXVモード中にDTXCreatorから指示を受けた場合の処理 ]
 						if ( DTXVmode.Enabled && DTXVmode.Refreshed )
@@ -1231,37 +1160,6 @@ for (int i = 0; i < 3; i++) {
 									this.previewSound.Dispose();
 									this.previewSound = null;
 								}
-								//{
-								//    int lastd = 0;
-								//    int f = 0;
-								//    for ( int i = 0; i < swlist1.Count; i++ )
-								//    {
-								//        int d1 = swlist1[ i ];
-								//        int d2 = swlist2[ i ];
-								//        int d3 = swlist3[ i ];
-								//        int d4 = swlist4[ i ];
-								//        int d5 = swlist5[ i ];
-
-								//        int dif = d1 - lastd;
-								//        string s = "";
-								//        if ( 16 <= dif && dif <= 17 )
-								//        {
-								//        }
-								//        else
-								//        {
-								//            s = "★";
-								//        }
-								//        Trace.TraceInformation( "frame {0:D4}: {1:D3} ( {2:D3}, {3:D3} - {7:D3}, {4:D3} ) {5}, n現在時刻={6}", f, dif, d1, d2, d3, s, d4, d5 );
-								//        lastd = d1;
-								//        f++;
-								//    }
-								//    swlist1.Clear();
-								//    swlist2.Clear();
-								//    swlist3.Clear();
-								//    swlist4.Clear();
-								//    swlist5.Clear();
-
-								//}
 							}
 							else if ( DTXVmode.Command == CDTXVmode.ECommand.Play )
 							{
@@ -1974,17 +1872,13 @@ for (int i = 0; i < 3; i++) {
 			#endregion
 			#region [ DTXVmodeクラス の初期化 ]
 			//---------------------
-			//Trace.TraceInformation( "DTXVモードの初期化を行います。" );
-			//Trace.Indent();
 			try
 			{
 				DTXVmode = new CDTXVmode();
 				DTXVmode.Enabled = false;
-				//Trace.TraceInformation( "DTXVモードの初期化を完了しました。" );
 			}
 			finally
 			{
-				//Trace.Unindent();
 			}
 			//---------------------
 			#endregion
@@ -2035,13 +1929,7 @@ for (int i = 0; i < 3; i++) {
 #endif
 			settings.BackBufferWidth = SampleFramework.GameWindowSize.Width;
 			settings.BackBufferHeight = SampleFramework.GameWindowSize.Height;
-//			settings.BackBufferCount = 3;
 			settings.EnableVSync = ConfigIni.b垂直帰線待ちを行う;
-//			settings.BackBufferFormat = Format.A8R8G8B8;
-//			settings.MultisampleType = MultisampleType.FourSamples;
-//			settings.MultisampleQuality = 4;
-//			settings.MultisampleType = MultisampleType.None;
-//			settings.MultisampleQuality = 0;
 			
 			try
 			{
@@ -2055,7 +1943,6 @@ for (int i = 0; i < 3; i++) {
 			}
 			
 			base.IsFixedTimeStep = false;
-//			base.TargetElapsedTime = TimeSpan.FromTicks( 10000000 / 75 );
 			base.Window.ClientSize = new Size(ConfigIni.nウインドウwidth, ConfigIni.nウインドウheight);	// #23510 2010.10.31 yyagi: to recover window size. width and height are able to get from Config.ini.
 			base.InactiveSleepTime = TimeSpan.FromMilliseconds((float)(ConfigIni.n非フォーカス時スリープms));	// #23568 2010.11.3 yyagi: to support valiable sleep value when !IsActive
 																												// #23568 2010.11.4 ikanick changed ( 1 -> ConfigIni )
@@ -2238,14 +2125,10 @@ for (int i = 0; i < 3; i++) {
 				Sound管理 = new CSound管理(base.Window.Handle,
 											soundDeviceType,
 											TJAPlayer3.ConfigIni.nWASAPIBufferSizeMs,
-					// CDTXMania.ConfigIni.nASIOBufferSizeMs,
 											0,
 											TJAPlayer3.ConfigIni.nASIODevice,
 											TJAPlayer3.ConfigIni.bUseOSTimer
 				);
-				//Sound管理 = FDK.CSound管理.Instance;
-				//Sound管理.t初期化( soundDeviceType, 0, 0, CDTXMania.ConfigIni.nASIODevice, base.Window.Handle );
-
 
 				Trace.TraceInformation("Initializing loudness scanning, song gain control, and sound group level control...");
 				Trace.Indent();
@@ -2272,7 +2155,6 @@ for (int i = 0; i < 3; i++) {
 				ShowWindowTitleWithSoundType();
 				FDK.CSound管理.bIsTimeStretch = TJAPlayer3.ConfigIni.bTimeStretch;
 				Sound管理.nMasterVolume = TJAPlayer3.ConfigIni.nMasterVolume;
-				//FDK.CSound管理.bIsMP3DecodeByWindowsCodec = CDTXMania.ConfigIni.bNoMP3Streaming;
 				Trace.TraceInformation( "サウンドデバイスの初期化を完了しました。" );
 			}
 			catch (Exception e)
@@ -2292,7 +2174,6 @@ for (int i = 0; i < 3; i++) {
 			try
 			{
 				Songs管理 = new CSongs管理();
-//				Songs管理_裏読 = new CSongs管理();
 				EnumSongs = new CEnumSongs();
 				actEnumSongs = new CActEnumSongs();
 				Trace.TraceInformation( "曲リストの初期化を完了しました。" );
@@ -2324,7 +2205,6 @@ for (int i = 0; i < 3; i++) {
 			r直前のステージ = null;
 			stage起動 = new CStage起動();
 			stageタイトル = new CStageタイトル();
-//			stageオプション = new CStageオプション();
 			stageコンフィグ = new CStageコンフィグ();
 			stage選曲 = new CStage選曲();
 			stage段位選択 = new CStage段位選択();
@@ -2339,7 +2219,6 @@ for (int i = 0; i < 3; i++) {
 			this.listトップレベルActivities.Add( act文字コンソール );
 			this.listトップレベルActivities.Add( stage起動 );
 			this.listトップレベルActivities.Add( stageタイトル );
-//			this.listトップレベルActivities.Add( stageオプション );
 			this.listトップレベルActivities.Add( stageコンフィグ );
 			this.listトップレベルActivities.Add( stage選曲 );
 			this.listトップレベルActivities.Add( stage段位選択 );
@@ -2707,7 +2586,6 @@ for (int i = 0; i < 3; i++) {
 				#region [ Config.iniの出力 ]
 				//---------------------
 				Trace.TraceInformation("Config.ini を出力します。");
-//				if ( ConfigIni.bIsSwappedGuitarBass )			// #24063 2011.1.16 yyagi ギターベースがスワップしているときは元に戻す
 				string str = strEXEのあるフォルダ + "Config.ini";
 				Trace.Indent();
 				try
@@ -2755,23 +2633,15 @@ for (int i = 0; i < 3; i++) {
 				#endregion
 				#region [ DTXVmodeの終了処理 ]
 				//---------------------
-				//Trace.TraceInformation( "DTXVモードの終了処理を行います。" );
-				//Trace.Indent();
 				try
 				{
 					if ( DTXVmode != null )
 					{
 						DTXVmode = null;
-						//Trace.TraceInformation( "DTXVモードの終了処理を完了しました。" );
-					}
-					else
-					{
-						//Trace.TraceInformation( "DTXVモードは使用されていません。" );
 					}
 				}
 				finally
 				{
-					//Trace.Unindent();
 				}
 				//---------------------
 				#endregion
@@ -2956,7 +2826,6 @@ for (int i = 0; i < 3; i++) {
 					if ( ConfigIni.KeyAssign.System.Capture[ i ].コード > 0 &&
 						 e.KeyCode == DeviceConstantConverter.KeyToKeyCode( (SlimDXKeys.Key) ConfigIni.KeyAssign.System.Capture[ i ].コード ) )
 					{
-						// Debug.WriteLine( "capture: " + string.Format( "{0:2x}", (int) e.KeyCode ) + " " + (int) e.KeyCode );
 						string strFullPath =
 						   Path.Combine( TJAPlayer3.strEXEのあるフォルダ, "Capture_img" );
 						strFullPath = Path.Combine( strFullPath, DateTime.Now.ToString( "yyyyMMddHHmmss" ) + ".png" );

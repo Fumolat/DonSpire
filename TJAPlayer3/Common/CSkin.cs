@@ -29,8 +29,6 @@ namespace TJAPlayer3
         SOUND決定音,
         SOUND取消音,
         SOUND変更音,
-        //SOUND赤,
-        //SOUND青,
         SOUND風船,
         SOUND曲決定音,
         SOUND成績発表,
@@ -185,28 +183,6 @@ namespace TJAPlayer3
                     Trace.TraceWarning($"ファイルが存在しません。: {this.strファイル名}");
                     return;
                 }
-                ////				for( int i = 0; i < 2; i++ )		// #27790 2012.3.10 yyagi 2回読み出しを、1回読みだし＋1回メモリコピーに変更
-                ////				{
-                //                    try
-                //                    {
-                //                        this.rSound[ 0 ] = CDTXMania.Sound管理.tサウンドを生成する( CSkin.Path( this.strファイル名 ) );
-                //                    }
-                //                    catch
-                //                    {
-                //                        this.rSound[ 0 ] = null;
-                //                        throw;
-                //                    }
-                //                    if ( this.rSound[ 0 ] == null )	// #28243 2012.5.3 yyagi "this.rSound[ 0 ].bストリーム再生する"時もCloneするようにし、rSound[1]がnullにならないよう修正→rSound[1]の再生正常化
-                //                    {
-                //                        this.rSound[ 1 ] = null;
-                //                    }
-                //                    else
-                //                    {
-                //                        this.rSound[ 1 ] = ( CSound ) this.rSound[ 0 ].Clone();	// #27790 2012.3.10 yyagi add: to accelerate loading chip sounds
-                //                        CDTXMania.Sound管理.tサウンドを登録する( this.rSound[ 1 ] );	// #28243 2012.5.3 yyagi add (登録漏れによりストリーム再生処理が発生していなかった)
-                //                    }
-
-                ////				}
 
                 for (int i = 0; i < 2; i++)     // 一旦Cloneを止めてASIO対応に専念
                 {
@@ -357,9 +333,6 @@ namespace TJAPlayer3
         public Cシステムサウンド soundDanSongSelectCheck = null;
         public Cシステムサウンド soundDanSelectBGM = null;
         public Cシステムサウンド soundDanSongSelect = null;
-
-        //public Cシステムサウンド soundRed = null;
-        //public Cシステムサウンド soundBlue = null;
         public Cシステムサウンド soundBalloon = null;
 
 
@@ -417,12 +390,6 @@ namespace TJAPlayer3
 
                     case Eシステムサウンド.BGM選曲画面:
                         return this.bgm選曲画面;
-
-                    //case Eシステムサウンド.SOUND赤:
-                    //    return this.soundRed;
-
-                    //case Eシステムサウンド.SOUND青:
-                    //    return this.soundBlue;
 
                     case Eシステムサウンド.SOUND風船:
                         return this.soundBalloon;
@@ -684,8 +651,6 @@ namespace TJAPlayer3
             this.soundError = new Cシステムサウンド(@"Sounds\Error.ogg", false, false, false, ESoundGroup.SoundEffect);
             this.soundsanka = new Cシステムサウンド(@"Sounds\sanka.ogg", false, false, false, ESoundGroup.Voice);
 
-            //this.soundRed               = new Cシステムサウンド( @"Sounds\dong.ogg",            false, false, true, ESoundType.SoundEffect );
-            //this.soundBlue              = new Cシステムサウンド( @"Sounds\ka.ogg",              false, false, true, ESoundType.SoundEffect );
             this.soundBalloon = new Cシステムサウンド(@"Sounds\balloon.ogg", false, false, true, ESoundGroup.SoundEffect);
             this.sound曲決定音 = new Cシステムサウンド(@"Sounds\SongDecide.ogg", false, false, true, ESoundGroup.Voice);
 
@@ -2384,10 +2349,6 @@ namespace TJAPlayer3
                             {
                                 Result_StageText_ForeColor = ColorTranslator.FromHtml(strParam);
                             }
-                            //else if (strCommand == nameof(Result_StageText_ForeColor_Red))
-                            //{
-                            //    Result_StageText_ForeColor_Red = ColorTranslator.FromHtml(strParam);
-                            //}
                             else if (strCommand == nameof(Result_MusicName_BackColor))
                             {
                                 Result_MusicName_BackColor = ColorTranslator.FromHtml(strParam);
@@ -2396,11 +2357,6 @@ namespace TJAPlayer3
                             {
                                 Result_StageText_BackColor = ColorTranslator.FromHtml(strParam);
                             }
-                            //else if (strCommand == nameof(Result_StageText_BackColor_Red))
-                            //{
-                            //    Result_StageText_BackColor_Red = ColorTranslator.FromHtml(strParam);
-                            //}
-
                             else if (strCommand == "Result_NamePlate_X")
                             {
                                 string[] strSplit = strParam.Split(',');
@@ -2923,10 +2879,8 @@ namespace TJAPlayer3
 
         public Color Result_MusicName_ForeColor = ColorTranslator.FromHtml("#FFFFFF");
         public Color Result_StageText_ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-        //public Color Result_StageText_ForeColor_Red = ColorTranslator.FromHtml("#FFFFFF");
         public Color Result_MusicName_BackColor = ColorTranslator.FromHtml("#000000");
         public Color Result_StageText_BackColor = ColorTranslator.FromHtml("#000000");
-        //public Color Result_StageText_BackColor_Red = ColorTranslator.FromHtml("#FF0000");
 
         public int[] Result_NamePlate_X = new int[] { 6, 260 };
         public int[] Result_NamePlate_Y = new int[] { 611, 611 };
